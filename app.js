@@ -38,7 +38,7 @@ function postReceived(request, response) {
     /* Actually handle the webhook */
     tryPullGit()
         .then(() => runBashCommand())
-        .then(() => console.log("Finished deploying!"));
+        .then(output => console.log(`\n${output}\n\nFinished deploying!`));
 }
 
 

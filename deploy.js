@@ -13,14 +13,14 @@ function tryPullGit() {
 
 function runBashCommand() {
     if (!config.deployScript) {
-        return Promise.resolve();
+        return Promise.resolve("No deploy script specified.");
     }
     return new Promise((resolve, reject) => {
         exec(config.deployScript, (err, stdout, stderr) => {
             if (err) {
                 reject(err.code);
             } else {
-                resolve();
+                resolve(stdout);
             }
         })
     })
