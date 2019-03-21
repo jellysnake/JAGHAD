@@ -1,5 +1,5 @@
 "use strict";
-import {exec} from "child_process";
+const {exec} = require("child_process");
 
 const config = require("./config.json");
 const simpleGit = require('simple-git/promise')(config.localPath);
